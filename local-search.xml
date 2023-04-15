@@ -22,44 +22,5 @@
   
   
   
-  <entry>
-    <title>图片测试</title>
-    <link href="/2023/04/13/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/"/>
-    <url>/2023/04/13/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/</url>
-    
-    <content type="html"><![CDATA[<p>下面是一张图片<br><img src="/img/avatar.png" alt="这是一张图片"></p><p><img src="https://raw.githubusercontent.com/Snvy320/ImageRepository/main/20230414000046.png" alt="测试"></p><p><img src="https://raw.githubusercontent.com/Snvy320/ImageRepository/main/20230414001154.png" alt="20230414001154"></p><p><img src="https://raw.githubusercontent.com/Snvy320/ImageRepository/main/202304140020168.png"></p><p><img src="https://raw.githubusercontent.com/Snvy320/ImageRepository/main/202304140020739.png" alt="image-20230414002029404"></p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/2023/04/13/myhello/"/>
-    <url>/2023/04/13/myhello/</url>
-    
-    <content type="html"><![CDATA[<h1 id="新建脚本文件"><a href="#新建脚本文件" class="headerlink" title="新建脚本文件"></a>新建脚本文件</h1><h2 id="Heloise"><a href="#Heloise" class="headerlink" title="Heloise"></a>Heloise</h2><h4 id="发射点发"><a href="#发射点发" class="headerlink" title="发射点发"></a>发射点发</h4><h2 id="飞洒地方"><a href="#飞洒地方" class="headerlink" title="飞洒地方"></a>飞洒地方</h2><hr><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br></code></pre></td></tr></table></figure><p>&amp;emsp;假如你在D盘新建了一个文件名为<code>cmcc.bat</code>，其路径为：<code>D:\cmcc.bat</code><br>如下图所示：<br><img src="https://imagere.oss-cn-beijing.aliyuncs.com/img20230227/202304132317073.png?x-oss-process=style/yasuo"></p><p>然后用记事本打开这个文件，复制下列代码</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>cout &lt;&lt; <span class="hljs-string">&quot;hello world&quot;</span> &lt;&lt; endl;<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;hello world&#x27;</span>)<br></code></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">cd ../..<br>echo hello<br></code></pre></td></tr></table></figure><p>保存并退出</p><h1 id="创建快捷方式"><a href="#创建快捷方式" class="headerlink" title="创建快捷方式"></a>创建快捷方式</h1><p><img src="https://imagere.oss-cn-beijing.aliyuncs.com/HaloFiles/image.png?x-oss-process=style/yasuo" alt="image"></p><p>然后右键你创建的快捷方式，并点击属性<br><img src="https://imagere.oss-cn-beijing.aliyuncs.com/HaloFiles/image-1681399223187.png?x-oss-process=style/yasuo" alt="image-1681399223187"></p><p>在目标这里添加账号和密码，中间用空格分隔<br><img src="https://imagere.oss-cn-beijing.aliyuncs.com/HaloFiles/image-1681399313413.png?x-oss-process=style/yasuo" alt="image-1681399313413"></p><p>然后想把这个快捷方式放到哪都行，之后双击打开快捷方式，实现的功能有：自动连接<code>NJUPT-CMCC</code>，自动上传账号密码（忽视系统代理）</p><h1 id="更改图标"><a href="#更改图标" class="headerlink" title="更改图标"></a>更改图标</h1><p>还可以在属性中更改图标</p><p>下面是块内公式<br>$$<br>\frac{1}{x^{cmos}} &#x3D; \infty<br>$$</p><p>这个是行内公式 $\sum^100_{i&#x3D;50}$</p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="/2023/04/13/hello-world/"/>
-    <url>/2023/04/13/hello-world/</url>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
   
 </search>
