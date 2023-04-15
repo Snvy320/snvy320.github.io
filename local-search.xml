@@ -4,19 +4,6 @@
   
   
   <entry>
-    <title>图片测试</title>
-    <link href="/2023/04/13/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/"/>
-    <url>/2023/04/13/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/</url>
-    
-    <content type="html"><![CDATA[<p>下面是一张图片<br><img src="/img/avatar.png" alt="这是一张图片"></p><p><img src="https://raw.githubusercontent.com/Snvy320/ImageRepository/main/20230414000046.png" alt="测试"></p><p><img src="https://raw.githubusercontent.com/Snvy320/ImageRepository/main/20230414001154.png" alt="20230414001154"></p><p><img src="https://raw.githubusercontent.com/Snvy320/ImageRepository/main/202304140020168.png"></p><p><img src="https://raw.githubusercontent.com/Snvy320/ImageRepository/main/202304140020739.png" alt="image-20230414002029404"></p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>单词</title>
     <link href="/2023/04/13/Word%20Recitation/"/>
     <url>/2023/04/13/Word%20Recitation/</url>
@@ -29,6 +16,19 @@
       <category>测试</category>
       
     </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>图片测试</title>
+    <link href="/2023/04/13/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/"/>
+    <url>/2023/04/13/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/</url>
+    
+    <content type="html"><![CDATA[<p>下面是一张图片<br><img src="/img/avatar.png" alt="这是一张图片"></p><p><img src="https://raw.githubusercontent.com/Snvy320/ImageRepository/main/20230414000046.png" alt="测试"></p><p><img src="https://raw.githubusercontent.com/Snvy320/ImageRepository/main/20230414001154.png" alt="20230414001154"></p><p><img src="https://raw.githubusercontent.com/Snvy320/ImageRepository/main/202304140020168.png"></p><p><img src="https://raw.githubusercontent.com/Snvy320/ImageRepository/main/202304140020739.png" alt="image-20230414002029404"></p>]]></content>
+    
     
     
   </entry>
