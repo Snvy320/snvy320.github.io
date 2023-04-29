@@ -5,8 +5,8 @@
   <meta name="Volantis" content="6.0.0-alpha.1">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://snvy.github.io/archives/2023/"/>
+  
+  <link rel="canonical" href="https://snvy.github.io/2023/04/29/sim800c/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -33,19 +33,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>归档：2023 - snvy's hut</title>
-  <meta name="keywords" content="关键词">
+  <title>用SIM800C实现拨打电话和发送短信 - snvy's hut</title>
+  <meta name="keywords" content="SIM模块,关键词">
   <meta desc name="description" content="描绘 - snvy - snvy's hut">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="snvy&#39;s hut">
-<meta property="og:url" content="https://snvy.github.io/archives/2023/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用SIM800C实现拨打电话和发送短信">
+<meta property="og:url" content="https://snvy.github.io/2023/04/29/SIM800C/index.html">
 <meta property="og:site_name" content="snvy&#39;s hut">
-<meta property="og:description" content="描绘">
+<meta property="og:description" content="SIM800C学习经验​	我的毕业设计题目为基于嵌入式技术的SAS（一种呼吸障碍疾病）监控器设计，主要是以BLE方式从前端接收病人数据，判断是否发生异常，从而发出蜂鸣器警报，若一段时间后患者仍未醒来，则会向家属发送短信与拨打电话。SIM800C模块可以直接通过指令发送短信与拨打电话，我在淘宝某店铺花了差不多50块大洋买了一块模块来用（这里不得不吐槽一下这个板子…芯片上的标识已经很久了，感觉像是老古">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2023-04-29T15:46:06.000Z">
+<meta property="article:modified_time" content="2023-04-29T15:11:25.614Z">
 <meta property="article:author" content="snvy">
-<meta property="article:tag" content="关键词">
+<meta property="article:tag" content="SIM模块">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2102,7 +2104,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -2167,7 +2169,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin begin-->
     
     <!-- Custom Files bodyBegin end-->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2434,98 +2436,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div id="l_body">
       <div id="l_cover">
   
-    
-      <div class="cover-wrapper  dock" id='half'>
-        
-  <div class='cover-bg lazyload placeholder' data-bg="https://gcore.jsdelivr.net/gh/MHG-LAB/cron@gh-pages/bing/bing.jpg"></div>
-
-<div class='cover-body'>
-  <div class='top'>
-    
-    
-      <p class="title">Volantis</p>
-    
-    
-  </div>
-  <div class='bottom'>
-    <div class='menu navigation'>
-      <div class='list-h'>
-        
-          
-            <a href="/v4/getting-started/"
-              
-              
-              active-action="action-v4getting-started">
-              <img src='https://unpkg.com/volantis-static@0.0.1660614606622/media/twemoji/assets/svg/1f5c3.svg'><p>文档</p>
-            </a>
-          
-            <a href="/faqs/"
-              
-              
-              active-action="action-faqs">
-              <img src='https://unpkg.com/volantis-static@0.0.1660614606622/media/twemoji/assets/svg/1f516.svg'><p>帮助</p>
-            </a>
-          
-            <a href="/examples/"
-              
-              
-              active-action="action-examples">
-              <img src='https://unpkg.com/volantis-static@0.0.1660614606622/media/twemoji/assets/svg/1f396.svg'><p>示例</p>
-            </a>
-          
-            <a href="/contributors/"
-              
-              
-              active-action="action-contributors">
-              <img src='https://unpkg.com/volantis-static@0.0.1660614606622/media/twemoji/assets/svg/1f389.svg'><p>社区</p>
-            </a>
-          
-            <a href="/archives/"
-              
-              
-              active-action="action-archives">
-              <img src='https://unpkg.com/volantis-static@0.0.1660614606622/media/twemoji/assets/svg/1f4f0.svg'><p>博客</p>
-            </a>
-          
-            <a target="_blank" rel="noopener" href="https://github.com/volantis-x/hexo-theme-volantis/"
-              
-              
-              active-action="action-https:githubcomvolantis-xhexo-theme-volantis">
-              <img src='https://unpkg.com/volantis-static@0.0.1660614606622/media/twemoji/assets/svg/1f9ec.svg'><p>源码</p>
-            </a>
-          
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-      </div>
-    
-  
 </div>
 
       <div id="safearea">
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-	
-		
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
   <link itemprop="mainEntityOfPage" href="https://snvy.github.io/2023/04/29/SIM800C/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="snvy's hut">
@@ -2535,135 +2452,257 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <meta itemprop="description" content="描绘">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/04/29/SIM800C/"  itemprop="url">
+    
+    
+      <h1 class="title" itemprop="name headline">
         用SIM800C实现拨打电话和发送短信
-      </a>
-    </h2>
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">请设置文章作者</p>
+  </a>
+</div>
+
+          
+        
+          
+            
   
-  <div class='md article-desc' itemprop="articleBody">
+  
+  
+  <div class='new-meta-item category'>
+    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/">毕业设计</a>
     
-      
-        SIM800C学习经验​	我的毕业设计题目为基于嵌入式技术的SAS（一种呼吸障碍疾病）监控器设计，主要是以BLE方式从前端接收病人数据，判断是否发生异常，从而发出蜂鸣器警报，若一段时间后患者仍未醒来，则会向家属发送短信与拨打电话。SIM800C模块可以直接通过指令发送短信与拨打电话，我在淘宝某店铺花了差不多50块大洋买了一块模块来用（这里不得不吐槽一下这个板子…芯片上的标识已经很久了，感觉像...
-      
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" itemprop="url"><span itemprop="name">毕业设计</span></a>
+      </span>
     
   </div>
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-04-29T23:46:06+08:00">2023-04-29</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/">毕业设计</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" itemprop="url"><span itemprop="name">毕业设计</span></a>
-            </span>
+
+
+
           
         
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-04-29T23:46:06+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2023年4月29日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
       </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h1 id="SIM800C学习经验"><a href="#SIM800C学习经验" class="headerlink" title="SIM800C学习经验"></a>SIM800C学习经验</h1><p>​	我的毕业设计题目为基于嵌入式技术的SAS（一种呼吸障碍疾病）监控器设计，主要是以BLE方式从前端接收病人数据，判断是否发生异常，从而发出蜂鸣器警报，若一段时间后患者仍未醒来，则会向家属发送短信与拨打电话。SIM800C模块可以直接通过指令发送短信与拨打电话，我在淘宝某店铺花了差不多50块大洋买了一块模块来用（这里不得不吐槽一下这个板子…芯片上的标识已经很久了，感觉像是老古董一样，而且上面的电源LED贴片也焊歪了，亮不了，不过幸好的是其他功能还能用，客服得态度也还不错就没有给他差评了）。</p>
+<hr>
+<h2 id="SIM800C简介"><a href="#SIM800C简介" class="headerlink" title="SIM800C简介"></a>SIM800C简介</h2><p>​	这个板子是支持BT的，不过我买这块没有这里就不多说了，这个模块用的是2G网络，由于联通的2G网络已经关闭了，所以联通卡可能不知道行不行，我没有试过，如果有联通卡的话也可以试一试。我用的是移动的卡。模块主要有天线，SIM插口（中卡，小卡可能不太能插进去），还有一些我不太认识的东西。不重要，看下图（来自淘宝某店铺）：</p>
+<p><img src="https://raw.githubusercontent.com/Snvy320/ImageRepository/main/202304292232448.jpg" class="lazyload" data-srcset="https://raw.githubusercontent.com/Snvy320/ImageRepository/main/202304292232448.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<p>我买的模块有7个引脚：RX、TX、GND、VCC、VMCU以及两个锂电池的引脚，其中VCC是得要稳定的5V电源模块才能正常运行的，不然很可能会注册不到网络。这里推荐用TTL接口的5V或者单独的电源供压，用单片机上的5V供压失败的概率很大（实测）。</p>
+<p>​	上电以后会观察到电源灯长亮，旁边的灯是显示是否注册到网络，如若注册网络成功会3秒亮一次，没注册成功是一秒频闪。</p>
+<hr>
+<h2 id="检查SIM800C模块状态指令"><a href="#检查SIM800C模块状态指令" class="headerlink" title="检查SIM800C模块状态指令"></a>检查SIM800C模块状态指令</h2><p>​	首先得强调一下，未强调的话指令末尾都是需要加”\r\n”或者在串口助手上勾选回车换行的（特别是在写代码时候字符串后面一定别忘加上”\r\n”），模块串口通信设置如下：</p>
+<p><img src="https://raw.githubusercontent.com/Snvy320/ImageRepository/main/202304292244013.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/Snvy320/ImageRepository/main/202304292244013.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20230429224440942"></p>
+<ol>
+<li><p>AT 返回OK，说明板子没坏</p>
+</li>
+<li><p>AT+CPIN?  返回如图所示，表示SIM卡插入正常：<img src="https://raw.githubusercontent.com/Snvy320/ImageRepository/main/202304292250953.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/Snvy320/ImageRepository/main/202304292250953.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+</li>
+<li><p>AT+COPS? 查询运营商信息，如图：<img src="https://raw.githubusercontent.com/Snvy320/ImageRepository/main/202304292258239.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/Snvy320/ImageRepository/main/202304292258239.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20230429225833150"></p>
+</li>
+<li><p>AT+CERG? 查询网络状态，0，1表示注册网络成功，如果出现0，2的话大概率是因为供电不稳定的原因。如图：<img src="https://raw.githubusercontent.com/Snvy320/ImageRepository/main/202304292300976.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/Snvy320/ImageRepository/main/202304292300976.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20230429230007808"></p>
+<p>上述步骤检查过后表示已经可以进行拨打电话或者发送信息了。</p>
+<p>​	拨打电话指令比较简单，”ATDTelephonenumber;“即可拨通（分号一定不要忘了），其实上述指令也可以不用输入，简单地通过观察板子网络指示灯是否3s闪烁一次即可。</p>
+</li>
+</ol>
+<hr>
+<h2 id="SIM800C发送英文短信–五步走"><a href="#SIM800C发送英文短信–五步走" class="headerlink" title="SIM800C发送英文短信–五步走"></a>SIM800C发送英文短信–五步走</h2><p>1.设置文本模式，AT+CMGF&#x3D;1,返回OK；<br>2.AT+CSCS&#x3D;“GSM”（发送纯英文短信），返回OK<br>3.AT+CMGS&#x3D;“Telephone-number”；<br>4.输入短信内容（最大为180字节）；<br>5.短信内容发送完毕后，使用16进制发送1A（无回车换行）完成发送短信操作；</p>
+<hr>
+<h2 id="SIM800C发送中文短信–六步走"><a href="#SIM800C发送中文短信–六步走" class="headerlink" title="SIM800C发送中文短信–六步走"></a>SIM800C发送中文短信–六步走</h2><p>1.设置文本模式，发送 AT+CMGF&#x3D;1；<br>2.设置短信模式，发送 AT+CSMP&#x3D;17,167,1,8；<br>3.设置为字符集编码，发送 AT+CSCS&#x3D;”UCS2“；<br>4.设置手机号，发送 AT+CMGS&#x3D;”电话号码（Unicode码）”；（中文、UNICODE互转工具，链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/117qHrm9IyxXbmaeEfw7eDQ">https://pan.baidu.com/s/117qHrm9IyxXbmaeEfw7eDQ</a> 提取码：1320）<br>5.输入中文内容的UNICODE码。<br>6.短信内容发送完毕后，使用16进制发送1A（无回车换行）完成发送短信操作；</p>
+<hr>
+<p>注意：<br>1.上述指令如果没有特殊说明都要加上回车换行符“\r\n或在串口通信助手勾选“回车换行”；<br>2.在进行代码编写时定义字符串时，由于一些指令包含了双引号 ” 可能会报错，最好加上转义字符\“；<br>3.发送16进制1A时可如下定义：char CMD&#x3D;”\x1A“；</p>
+
+  </div>
+  
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
       
-        <div>
-          <a class='readmore' href='/2023/04/29/SIM800C/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-29T23:11:25+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2023年4月29日</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://snvy.github.io/2023/04/13/Word Recitation/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="snvy's hut">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="snvy's hut">
-    <meta itemprop="description" content="描绘">
-  </span>
+          
   
   
   
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/SIM%E6%A8%A1%E5%9D%97/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>SIM模块</p></a></div>
+  <span hidden itemprop="keywords">SIM模块</span>
   
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/04/13/Word%20Recitation/"  itemprop="url">
-        Word Recitation
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        Word RecitationThe first week14th,  April
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://snvy.github.io/2023/04/29/SIM800C/&title=用SIM800C实现拨打电话和发送短信 - snvy's hut&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://snvy.github.io/2023/04/29/SIM800C/&title=用SIM800C实现拨打电话和发送短信 - snvy's hut&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://snvy.github.io/2023/04/29/SIM800C/&title=用SIM800C实现拨打电话和发送短信 - snvy's hut&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2023/04/13/Word%20Recitation/'>
+          <p class='title'>Word Recitation<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>Word RecitationThe first week14th,  April
 folkway 传统，习俗
 limestone 石灰岩
 secrete 分泌；隐藏，藏匿
-methane 甲烷，沼气
-buck 一美元，小伙子；抵制，反抗；	big bucks ：一大笔钱 buck up 振作起来！	buck the trends：顶住趋势，顶住形势
-debris 碎片，残骸
-recharg...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-04-13T23:46:06+08:00">2023-04-13</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E8%80%83%E7%A0%94/">考研</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E8%80%83%E7%A0%94/" itemprop="url"><span itemprop="name">考研</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/04/13/Word%20Recitation/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
+methane 甲烷...</p>
+        </a>
       
     </div>
   
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
+  <!-- 文章推荐 -->
   
-    
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
   
 
 
-	
+  <article class="post white-box shadow floatable blur" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/2023/04/29/SIM800C/index.html#comments">
+    </span>
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
+    
+
+    <div id="layoutHelper-comments"></div>
+
+  </article>
+
+
+
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2672,134 +2711,31 @@ recharg...
     
     
       
-<section class="widget blogger desktop mobile ">
-  <div class='content'>
     
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/Logo-NavBar@3x.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">snvy's hut</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fa-solid fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:me@xxx.com"
-              class="social fa-solid fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fa-solid fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget category desktop">
-    
-  <header>
-    
-      <a href='/blog/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" href="/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"
-            active-action="action-categoriesE6AF95E4B89AE8AEBEE8AEA1"
-            ><div class='name'>毕业设计</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E8%80%83%E7%A0%94/" href="/categories/%E8%80%83%E7%A0%94/"
-            active-action="action-categoriesE88083E7A094"
-            ><div class='name'>考研</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget tagcloud desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/SIM%E6%A8%A1%E5%9D%97/" style="font-size: 14px; color: #999">SIM模块</a> <a href="/tags/word/" style="font-size: 14px; color: #999">word</a>
-    </div>
-  </section>
-
-
-    
-  
-
   
 
 
 <div class="widget-sticky">
+
+  
+  
+
+
+<section class="widget toc-wrapper desktop mobile" id="toc-div" >
+  
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+  <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#SIM800C%E7%AE%80%E4%BB%8B"><span class="toc-text">SIM800C简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A3%80%E6%9F%A5SIM800C%E6%A8%A1%E5%9D%97%E7%8A%B6%E6%80%81%E6%8C%87%E4%BB%A4"><span class="toc-text">检查SIM800C模块状态指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SIM800C%E5%8F%91%E9%80%81%E8%8B%B1%E6%96%87%E7%9F%AD%E4%BF%A1%E2%80%93%E4%BA%94%E6%AD%A5%E8%B5%B0"><span class="toc-text">SIM800C发送英文短信–五步走</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SIM800C%E5%8F%91%E9%80%81%E4%B8%AD%E6%96%87%E7%9F%AD%E4%BF%A1%E2%80%93%E5%85%AD%E6%AD%A5%E8%B5%B0"><span class="toc-text">SIM800C发送中文短信–六步走</span></a></li></ol>
+  </div>
+</section>
+
+  
 
 </div>
 
@@ -2807,6 +2743,7 @@ recharg...
   
   <!-- Custom Files side end -->
 </aside>
+
 
 
         </div>
@@ -3288,7 +3225,7 @@ recharg...
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"snvy's hut","url":"https://snvy.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"snvy","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://snvy.github.io/","sameAs":["https://github.com/volantis-x"],"description":"描绘"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://snvy.github.io/","name":"snvy's hut"}},{"@type":"ListItem","position":2,"item":{"@id":"https://snvy.github.io/archives/","name":"Archive"}},{"@type":"ListItem","position":3,"item":{"@id":"https://snvy.github.io/archives/2023/","name":"2023年"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"snvy's hut","url":"https://snvy.github.io/","keywords":"关键词","description":"描绘","author":{"@type":"Person","name":"snvy","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://snvy.github.io/","description":"描绘"},"publisher":{"@type":"Organization","name":"snvy's hut","url":"https://snvy.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://snvy.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"描绘","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"snvy","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://snvy.github.io/"},"publisher":{"@type":"Organization","name":"snvy's hut","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"snvy's hut","url":"https://snvy.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"snvy","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://snvy.github.io/","sameAs":["https://github.com/volantis-x"],"description":"描绘"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://snvy.github.io/","name":"snvy's hut"}},{"@type":"ListItem","position":2,"item":{"@id":"https://snvy.github.io/categories/毕业设计/","name":"毕业设计"}},{"@type":"ListItem","position":3,"item":{"@id":"https://snvy.github.io/2023/04/29/SIM800C/","name":"用SIM800C实现拨打电话和发送短信"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"snvy's hut","url":"https://snvy.github.io/","keywords":"关键词","description":"描绘","author":{"@type":"Person","name":"snvy","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://snvy.github.io/","description":"描绘"},"publisher":{"@type":"Organization","name":"snvy's hut","url":"https://snvy.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://snvy.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"用SIM800C实现拨打电话和发送短信","description":"描绘","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://snvy.github.io/2023/04/29/SIM800C/"},"author":{"@type":"Person","name":"snvy","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://snvy.github.io/"},"publisher":{"@type":"Organization","name":"snvy's hut","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://snvy.github.io/2023/04/29/SIM800C/","wordCount":0,"datePublished":"2023-04-29T15:46:06.000Z","dateModified":"2023-04-29T15:11:25.614Z","articleSection":"毕业设计","keywords":"SIM模块","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
