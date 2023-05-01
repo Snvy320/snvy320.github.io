@@ -45,7 +45,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-04-29T15:46:06.000Z">
-<meta property="article:modified_time" content="2023-04-29T15:15:56.336Z">
+<meta property="article:modified_time" content="2023-04-29T15:34:38.897Z">
 <meta property="article:author" content="snvy">
 <meta property="article:tag" content="SIM模块">
 <meta name="twitter:card" content="summary">
@@ -2112,7 +2112,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1682781376760),
+    lastupdate: new Date(1682926386756),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2528,7 +2528,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="post-body" itemprop="articleBody">
     <h1 id="SIM800C学习经验"><a href="#SIM800C学习经验" class="headerlink" title="SIM800C学习经验"></a>SIM800C学习经验</h1><p>​	 我的毕业设计题目为基于嵌入式技术的SAS（一种呼吸障碍疾病）监控器设计，主要是以BLE方式从前端接收病人数据，判断是否发生异常，从而发出蜂鸣器警报，若一段时间后患者仍未醒来，则会向家属发送短信与拨打电话。SIM800C模块可以直接通过指令发送短信与拨打电话，我在淘宝某店铺花了差不多50块大洋买了一块模块来用（这里不得不吐槽一下这个板子…芯片上的标识已经很久了，感觉像是老古董一样，而且上面的电源LED贴片也焊歪了，亮不了，不过幸好的是其他功能还能用，客服得态度也还不错就没有给他差评了）。</p>
 <hr>
-<h2 id="SIM800C简介"><a href="#SIM800C简介" class="headerlink" title="SIM800C简介"></a>SIM800C简介</h2><p>​	 这个板子是支持BT的，不过我买这块没有这里就不多说了，这个模块用的是2G网络，由于联通的2G网络已经关闭了，所以联通卡可能不知道行不行，我没有试过，如果有联通卡的话也可以试一试。我用的是移动的卡。模块主要有天线，SIM插口（中卡，小卡可能不太能插进去），还有一些我不太认识的东西。不重要，看下图（来自淘宝某店铺）：</p>
+<h2 id="SIM800C简介"><a href="#SIM800C简介" class="headerlink" title="SIM800C简介"></a>SIM800C简介</h2><p>​												这个板子是支持BT的，不过我买这块没有这里就不多说了，这个模块用的是2G网络，由于联通的2G网络已经关闭了，所以联通卡可能不知道行不行，我没有试过，如果有联通卡的话也可以试一试。我用的是移动的卡。模块主要有天线，SIM插口（中卡，小卡可能不太能插进去），还有一些我不太认识的东西。不重要，看下图（来自淘宝某店铺）：</p>
 <p><img src="https://raw.githubusercontent.com/Snvy320/ImageRepository/main/202304292232448.jpg" class="lazyload" data-srcset="https://raw.githubusercontent.com/Snvy320/ImageRepository/main/202304292232448.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
 <p>我买的模块有7个引脚：RX、TX、GND、VCC、VMCU以及两个锂电池的引脚，其中VCC是得要稳定的5V电源模块才能正常运行的，不然很可能会注册不到网络。这里推荐用TTL接口的5V或者单独的电源供压，用单片机上的5V供压失败的概率很大（实测）。</p>
 <p>​	上电以后会观察到电源灯长亮，旁边的灯是显示是否注册到网络，如若注册网络成功会3秒亮一次，没注册成功是一秒频闪。</p>
@@ -2547,22 +2547,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>​	拨打电话指令比较简单，”ATDTelephonenumber;“即可拨通（分号一定不要忘了），其实上述指令也可以不用输入，简单地通过观察板子网络指示灯是否3s闪烁一次即可。</p>
 </li>
 </ol>
-<hr>
-<h2 id="SIM800C发送英文短信–五步走"><a href="#SIM800C发送英文短信–五步走" class="headerlink" title="SIM800C发送英文短信–五步走"></a>SIM800C发送英文短信–五步走</h2><pre><code>1.设置文本模式，AT+CMGF=1,返回OK；
-2.AT+CSCS=“GSM”（发送纯英文短信），返回OK
-3.AT+CMGS=“Telephone-number”；
-4.输入短信内容（最大为180字节）；
-5.短信内容发送完毕后，使用16进制发送1A（无回车换行）完成发送短信操作；
-</code></pre>
-<hr>
-<h2 id="SIM800C发送中文短信–六步走"><a href="#SIM800C发送中文短信–六步走" class="headerlink" title="SIM800C发送中文短信–六步走"></a>SIM800C发送中文短信–六步走</h2><pre><code>1.设置文本模式，发送 AT+CMGF=1；
-2.设置短信模式，发送 AT+CSMP=17,167,1,8；
-3.设置为字符集编码，发送 AT+CSCS=”UCS2“；
-4.设置手机号，发送 AT+CMGS=”电话号码（Unicode码）&quot;；（中文、UNICODE互转工具，链接：https://pan.baidu.com/s/117qHrm9IyxXbmaeEfw7eDQ 提取码：1320）
-5.输入中文内容的UNICODE码。
-6.短信内容发送完毕后，使用16进制发送1A（无回车换行）完成发送短信操作；
-</code></pre>
-<hr>
+<h2 id="SIM800C发送英文短信–五步走"><a href="#SIM800C发送英文短信–五步走" class="headerlink" title="SIM800C发送英文短信–五步走"></a>SIM800C发送英文短信–五步走</h2><ol>
+<li>设置文本模式，AT+CMGF&#x3D;1,返回OK；</li>
+<li>AT+CSCS&#x3D;“GSM”（发送纯英文短信），返回OK</li>
+<li>AT+CMGS&#x3D;“Telephone-number”；</li>
+<li>输入短信内容（最大为180字节）；</li>
+<li>短信内容发送完毕后，使用16进制发送1A（无回车换行）完成发送短信操作；</li>
+</ol>
+<h2 id="SIM800C发送中文短信–六步走"><a href="#SIM800C发送中文短信–六步走" class="headerlink" title="SIM800C发送中文短信–六步走"></a>SIM800C发送中文短信–六步走</h2><ol>
+<li>设置文本模式，发送 AT+CMGF&#x3D;1；</li>
+<li>设置短信模式，发送 AT+CSMP&#x3D;17,167,1,8；</li>
+<li>设置为字符集编码，发送 AT+CSCS&#x3D;”UCS2“；</li>
+<li>设置手机号，发送 AT+CMGS&#x3D;”电话号码（Unicode码）”；（中文、UNICODE互转工具，链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/117qHrm9IyxXbmaeEfw7eDQ">https://pan.baidu.com/s/117qHrm9IyxXbmaeEfw7eDQ</a> 提取码： - 1320）</li>
+<li>输入中文内容的UNICODE码。</li>
+<li>短信内容发送完毕后，使用16进制发送1A（无回车换行）完成发送短信操作；</li>
+</ol>
 <p>注意：<br>    1.上述指令如果没有特殊说明都要加上回车换行符“\r\n或在串口通信助手勾选“回车换行”；<br>    2.在进行代码编写时定义字符串时，由于一些指令包含了双引号 ” 可能会报错，最好加上转义字符\“；<br>    3.发送16进制1A时可如下定义：char CMD&#x3D;”\x1A“；</p>
 
   </div>
@@ -2588,7 +2587,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-29T23:15:56+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-29T23:34:38+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2023年4月29日</p>
@@ -3236,7 +3235,7 @@ methane 甲烷...</p>
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"snvy's hut","url":"https://snvy.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"snvy","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://snvy.github.io/","sameAs":["https://github.com/volantis-x"],"description":"描绘"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://snvy.github.io/","name":"snvy's hut"}},{"@type":"ListItem","position":2,"item":{"@id":"https://snvy.github.io/categories/毕业设计/","name":"毕业设计"}},{"@type":"ListItem","position":3,"item":{"@id":"https://snvy.github.io/2023/04/29/SIM800C/","name":"用SIM800C实现拨打电话和发送短信"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"snvy's hut","url":"https://snvy.github.io/","keywords":"关键词","description":"描绘","author":{"@type":"Person","name":"snvy","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://snvy.github.io/","description":"描绘"},"publisher":{"@type":"Organization","name":"snvy's hut","url":"https://snvy.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://snvy.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"用SIM800C实现拨打电话和发送短信","description":"描绘","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://snvy.github.io/2023/04/29/SIM800C/"},"author":{"@type":"Person","name":"snvy","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://snvy.github.io/"},"publisher":{"@type":"Organization","name":"snvy's hut","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://snvy.github.io/2023/04/29/SIM800C/","wordCount":0,"datePublished":"2023-04-29T15:46:06.000Z","dateModified":"2023-04-29T15:15:56.336Z","articleSection":"毕业设计","keywords":"SIM模块","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"snvy's hut","url":"https://snvy.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"snvy","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://snvy.github.io/","sameAs":["https://github.com/volantis-x"],"description":"描绘"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://snvy.github.io/","name":"snvy's hut"}},{"@type":"ListItem","position":2,"item":{"@id":"https://snvy.github.io/categories/毕业设计/","name":"毕业设计"}},{"@type":"ListItem","position":3,"item":{"@id":"https://snvy.github.io/2023/04/29/SIM800C/","name":"用SIM800C实现拨打电话和发送短信"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"snvy's hut","url":"https://snvy.github.io/","keywords":"关键词","description":"描绘","author":{"@type":"Person","name":"snvy","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://snvy.github.io/","description":"描绘"},"publisher":{"@type":"Organization","name":"snvy's hut","url":"https://snvy.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://snvy.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"用SIM800C实现拨打电话和发送短信","description":"描绘","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://snvy.github.io/2023/04/29/SIM800C/"},"author":{"@type":"Person","name":"snvy","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://snvy.github.io/"},"publisher":{"@type":"Organization","name":"snvy's hut","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://snvy.github.io/2023/04/29/SIM800C/","wordCount":0,"datePublished":"2023-04-29T15:46:06.000Z","dateModified":"2023-04-29T15:34:38.897Z","articleSection":"毕业设计","keywords":"SIM模块","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
