@@ -41,11 +41,11 @@
 <meta property="og:title" content="snvy&#39;s hut">
 <meta property="og:url" content="https://snvy.github.io/2024/03/14/%E5%A4%8D%E8%AF%95/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/%E9%80%9A%E5%8E%9F%E7%AE%80%E7%AD%94%E9%A2%98/index.html">
 <meta property="og:site_name" content="snvy&#39;s hut">
-<meta property="og:description" content="通信原理简答题 数字通信的特点？ ​		抗干扰能力强，噪声不积累；传输差错可控；易于处理、变换、存储；易于集成，微型化，易于加密处理；缺点是占用带框较大，对同步要求高。  HDB3优点？ ​		 无直流成分，高低频分量少，编码解码电路简单，可利用传号极性交替这一规律观察误码情况，将连0码限制在3个以内，使得接收时能保证定时信息的提取。 ​		规则：（1）连0不超过3时，与AMI码一样“1，-1”交">
+<meta property="og:description" content="通信原理简答题 数字通信的特点？ ​		抗干扰能力强，噪声不积累；传输差错可控；易于处理、变换、存储；易于集成，微型化，易于加密处理；缺点是占用带宽较大，对同步要求高。  HDB3优点？ ​		 无直流成分，高低频分量少，编码解码电路简单，可利用传号极性交替这一规律观察误码情况，将连0码限制在3个以内，使得接收时能保证定时信息的提取。 ​		规则：（1）连0不超过3时，与AMI码一样“1，-1”交">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2024-03-14T11:52:41.105Z">
-<meta property="article:modified_time" content="2024-03-22T12:59:43.663Z">
+<meta property="article:modified_time" content="2024-03-30T11:36:08.970Z">
 <meta property="article:author" content="snvy">
 <meta property="article:tag" content="关键词">
 <meta name="twitter:card" content="summary">
@@ -2112,7 +2112,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1711537128024),
+    lastupdate: new Date(1715322814713),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2474,7 +2474,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="post-body" itemprop="articleBody">
     <h1 id="通信原理简答题"><a href="#通信原理简答题" class="headerlink" title="通信原理简答题"></a>通信原理简答题</h1><ol>
 <li><p>数字通信的特点？</p>
-<p>​		抗干扰能力强，噪声不积累；传输差错可控；易于处理、变换、存储；易于集成，微型化，易于加密处理；缺点是占用带框较大，对同步要求高。</p>
+<p>​		抗干扰能力强，噪声不积累；传输差错可控；易于处理、变换、存储；易于集成，微型化，易于加密处理；缺点是占用带宽较大，对同步要求高。</p>
 </li>
 <li><p>HDB3优点？</p>
 <p>​		 无直流成分，高低频分量少，编码解码电路简单，可利用传号极性交替这一规律观察误码情况，将连0码限制在3个以内，使得接收时能保证定时信息的提取。</p>
@@ -2519,10 +2519,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li><p>2PSK与2DPSK区别？</p>
 <p>​		2PSK是利用载波当前码元相位来传递信息，振幅和频率保持不变，常用0°表示0，180°表示1。而2DPSK是利用前后码元相对相位变化来传递信息。前者存在相位模糊，即倒pai现象（恢复的本地载波与实际的相干载波可能同向或反向，将导致判决器输出数字信号全部出错）。</p>
 </li>
-<li><p>为什么采用非均匀量化？</p>
-<p>​		非均匀量化时，量化间隔随信号的抽样值变化，抽样值小的间隔小，抽样值大时间隔大，进而使信噪比改善。</p>
+<li><p>为什么采用非均匀量化？<br>  非均匀量化时，量化间隔随信号的抽样值变化，抽样值小的间隔小，抽样值大时间隔大，进而使信噪比改善。</p>
+</li>
+<li><p>什么是频域均衡？时域均衡？横向滤波器为什么能实现时域均衡？</p>
+<p>​		频域均衡是利用一个可调滤波器，使得系统总特性Hw接近无失真条件；时域均衡直接用来校正响应波形，使整个系统冲激响应ht满足无码间串扰条件。因为它直接将接收滤波器输出端有码间串扰的响应波形变成无码间串扰的响应波形。</p>
+</li>
+<li><p>简述脉冲编码调制的主要过程？</p>
+<p>​		抽样：把时间连续、幅值连续的信号变换为时间离散，幅值连续的脉冲信号；<br>​		量化：把时间离散、幅值连续的脉冲信号变换为时间离散、幅值离散的多电平脉冲信号；<br>​		编码：编码是把幅值、时间离散的多电平脉冲信号用一组数字序列表示。</p>
+</li>
+<li><p>匹配滤波器？<br>    使抽样时刻上输出信噪比最大时的线性滤波器称作匹配滤波器；</p>
+</li>
+<li><p>最佳接收？<br>    码元出错的概率最小，最大后验概率与最大似然准则都可以得到理论的最佳误码率。</p>
 </li>
 </ol>
+<p>​		</p>
 
   </div>
   
@@ -2547,10 +2557,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-03-22T20:59:43+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-03-30T19:36:08+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2024年3月22日</p>
+    <p>更新于：2024年3月30日</p>
   </a>
 </div>
 
@@ -2626,9 +2636,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2024/03/25/%E5%A4%8D%E8%AF%95/P-In2.0/'>
+        <a class='prev' href='/2024/03/26/Personal%20introduction/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>2024年3月14日</p>
-          <p class='content'>​	Good Afternoon, respected professors. My name is Zengwei, and I am twenty-three years old. I ha...</p>
+          <p class='content'>自我介绍——中文版​		各位尊敬的老师早上好，我叫曾伟，今年23岁，毕业于南京邮电大学电子科学与技术专业，我很幸运也很高兴能参加这次面试，我将从三个部分来介绍我自己，分别是我的家乡，校园生活，还...</p>
         </a>
       
       
@@ -3194,7 +3204,7 @@ DNS包括域名空间、名字服务器、解析器
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"snvy's hut","url":"https://snvy.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"snvy","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://snvy.github.io/","sameAs":["https://github.com/volantis-x"],"description":"描绘"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://snvy.github.io/","name":"snvy's hut"}},{"@type":"ListItem","position":3,"item":{"@id":"https://snvy.github.io/2024/03/14/复试/通信原理/通原简答题/"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"snvy's hut","url":"https://snvy.github.io/","keywords":"关键词","description":"描绘","author":{"@type":"Person","name":"snvy","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://snvy.github.io/","description":"描绘"},"publisher":{"@type":"Organization","name":"snvy's hut","url":"https://snvy.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://snvy.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"描绘","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://snvy.github.io/2024/03/14/%E5%A4%8D%E8%AF%95/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/%E9%80%9A%E5%8E%9F%E7%AE%80%E7%AD%94%E9%A2%98/"},"author":{"@type":"Person","name":"snvy","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://snvy.github.io/"},"publisher":{"@type":"Organization","name":"snvy's hut","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://snvy.github.io/2024/03/14/%E5%A4%8D%E8%AF%95/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/%E9%80%9A%E5%8E%9F%E7%AE%80%E7%AD%94%E9%A2%98/","wordCount":0,"datePublished":"2024-03-14T11:52:41.105Z","dateModified":"2024-03-22T12:59:43.663Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"snvy's hut","url":"https://snvy.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"snvy","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://snvy.github.io/","sameAs":["https://github.com/volantis-x"],"description":"描绘"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://snvy.github.io/","name":"snvy's hut"}},{"@type":"ListItem","position":3,"item":{"@id":"https://snvy.github.io/2024/03/14/复试/通信原理/通原简答题/"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"snvy's hut","url":"https://snvy.github.io/","keywords":"关键词","description":"描绘","author":{"@type":"Person","name":"snvy","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://snvy.github.io/","description":"描绘"},"publisher":{"@type":"Organization","name":"snvy's hut","url":"https://snvy.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://snvy.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"描绘","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://snvy.github.io/2024/03/14/%E5%A4%8D%E8%AF%95/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/%E9%80%9A%E5%8E%9F%E7%AE%80%E7%AD%94%E9%A2%98/"},"author":{"@type":"Person","name":"snvy","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://snvy.github.io/"},"publisher":{"@type":"Organization","name":"snvy's hut","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://snvy.github.io/2024/03/14/%E5%A4%8D%E8%AF%95/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/%E9%80%9A%E5%8E%9F%E7%AE%80%E7%AD%94%E9%A2%98/","wordCount":0,"datePublished":"2024-03-14T11:52:41.105Z","dateModified":"2024-03-30T11:36:08.970Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
